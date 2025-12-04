@@ -1,0 +1,10 @@
+### File 2: .gitignore
+```
+.DS_Store
+*.swp
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+node_modules/
+*.log
