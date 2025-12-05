@@ -12,15 +12,13 @@
 
 ---
 
-## TEMPLATE 1: QUICK TIER 1 - SINGLE TICKER BC CHECK
-*(Use when: Real-time question about buying climax risk)*
+## TEMPLATE 1a: QUICK TIER 1 - SINGLE TICKER BC CHECK
+*(Use when: Real-time question about exiting due to buying climax risk)*
 
 ```
 SYSTEM: You are a Wyckoff analyst. Score ONLY for buying climax risk. Return JSON.
 
 TICKER: [YOUR_TICKER]
-CURRENT_PRICE: $[PRICE]
-DATE: December 4, 2025
 
 Required analysis (use 250-day data minimum):
 - Last 5 days: Daily % change, volume vs 20-day average
@@ -46,6 +44,46 @@ OUTPUT: JSON ONLY
   "interpretation": "One sentence"
 }
 ```
+
+---
+
+## TEMPLATE 1a: QUICK TIER 1 - SINGLE TICKER SP CHECK
+*(Use when: Real-time question about spring buying opportunity)*
+
+```
+SYSTEM: You are a Wyckoff analyst. Score ONLY for spring/accumulation setup. Return JSON.
+
+TICKER: [YOUR_TICKER]
+
+Required analysis (use 250-day data minimum):
+- Last 5 days: Daily % change, volume vs 20-day average
+- Recent low: Date, price, % decline from peak
+- Indicators: RSI, Stochastic, OBV trend, MFI, price vs 20-day SMA
+- Price behavior: Spring test? Volume spike at lows? Reversal pattern?
+
+Score the 7 SPRING signals (0-4 each, 28 max):
+
+1. Selling climax? (>5% single day drop or >3%+3% consecutive decline)
+2. Volume spike at lows? (>2x 20-day avg AT or NEAR price low)
+3. Spring test? (Broke support, reversed quickly on declining volume)
+4. Oversold indicators? (RSI<30, Stoch<20, both?)
+5. Volume accumulation? (OBV rising at new lows = positive divergence?)
+6. Behavior at lows? (panic low, strong reversal, close in top 30% of range)
+7. Sentiment extreme? (media/social panic, analyst downgrades AFTER drop)
+
+OUTPUT: JSON ONLY
+{
+  "ticker": "[TICKER]",
+  "spring_score": [0-28],
+  "recent_low": {"date": "YYYY-MM-DD", "price": X.XX, "decline_from_peak": "X%"},
+  "confidence": [1-10],
+  "key_signals": "List which signals triggered",
+  "action": "WAIT / WATCH / ENTER",
+  "interpretation": "One sentence",
+  "invalidation_level": "Price below $X invalidates spring"
+}
+```
+
 
 ---
 
