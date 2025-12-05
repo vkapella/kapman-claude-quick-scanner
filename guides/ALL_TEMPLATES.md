@@ -220,8 +220,6 @@ SYSTEM: You are a professional Wyckoff analyst. Analyze [TICKER] for entry setup
 
 CONTEXT:
 Ticker: [TICKER]
-Current price: $[PRICE]
-Analysis date: December 4, 2025
 
 SITUATION: [Description - e.g., "Stock declined 20% from $200 highs, now consolidating around $160"]
 
